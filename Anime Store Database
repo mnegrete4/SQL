@@ -1,0 +1,41 @@
+/** Anime Store:
+Naruto (15)
+SAO (14)
+AOT (13)
+Bluelock (12)
+My Hero Academia (11)
+Haikyu (10)
+The Irregular at Magic High School (9)
+Kuroko's Basketball (8)
+Spy x Family (7)
+Date a Live (6)
+Aoashi (5)
+A Couple of Cuckoos (4)
+The Quintessential Quintuplets (3)
+Nisekoi (2)
+Dragon Ball (1)
+Lookism (0.5)
+**/
+
+CREATE TABLE animestore (id INTEGER PRIMARY KEY, name TEXT, price NUMERIC );
+
+INSERT INTO animestore VALUES (1, "Naruto", 15);
+INSERT INTO animestore VALUES (2, "SAO", 14);
+INSERT INTO animestore VALUES (3, "AOT", 13);
+INSERT INTO animestore VALUES (4, "Bluelock", 12);
+INSERT INTO animestore VALUES (5, "My Hero Academia", 11);
+INSERT INTO animestore VALUES (6, "Haikyu", 10);
+INSERT INTO animestore VALUES (7, "The Irregular at Magic High School", 9);
+INSERT INTO animestore VALUES (8, "Kuroko's Basketball", 8);
+INSERT INTO animestore VALUES (9, "Spy x Family", 7);
+INSERT INTO animestore VALUES (10, "Date a Live", 6);
+INSERT into animestore VALUES (11, "Aoashi" , 5);
+INSERT into animestore VALUES (12, "A Couple of Cuckoos", 4);
+INSERT into animestore VALUES (13, "The Quintessential Quintuplets", 3);
+INSERT INTO animestore VALUES (14, "Nisekoi", 2);
+INSERT INTO animestore VALUES (15, "Dragon Ball", 1);
+INSERT INTO animestore VALUES (16, "Lookism", 0.5);
+
+SELECT name, price FROM animestore 
+ORDER BY price; 
+SELECT * , SUM (price) FROM animestore;
