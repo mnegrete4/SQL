@@ -1,0 +1,76 @@
+/* Create table about the people and what they do here */
+
+
+CREATE TABLE famous_actors (
+  id INTEGER PRIMARY KEY,
+  full_name TEXT
+);
+
+INSERT INTO famous_actors (id, full_name)
+VALUES
+  (1, 'Tom Hanks'),
+  (2, 'Meryl Streep'),
+  (3, 'Leonardo DiCaprio'),
+  (4, 'Angelina Jolie'),
+  (5, 'Brad Pitt'),
+  (6, 'Scarlett Johansson'),
+  (7, 'Dwayne Johnson'),
+  (8, 'Emma Stone'),
+  (9, 'Ryan Reynolds'),
+  (10, 'Jennifer Lawrence');
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY,
+    person_id INTEGER,
+    movie_name TEXT
+);
+
+CREATE TABLE spouses (
+  id INTEGER PRIMARY KEY,
+  actor_id INTEGER,
+  name TEXT
+);
+
+INSERT INTO spouses (actor_id, name) VALUES
+  (1, 'Rita Wilson'),
+  (2, 'Don Gummer'),
+  (3, 'Camila Morrone'),
+  (4, 'Brad Pitt'),
+  (5, 'Angelina Jolie'),
+  (6, 'Colin Jost'),
+  (7, 'Lauren Hashian'),
+  (8, 'Dave McCary'),
+  (9, 'Blake Lively'),
+  (10, 'Cooke Maroney');
+
+
+INSERT INTO movies (person_id, movie_name) VALUES  
+  (1, 'Forrest Gump'), 
+  (1, 'Cast Away'),
+  (2, 'The Devil Wears Prada'), 
+  (2, 'Kramer vs. Kramer'),
+  (3, 'Titanic'), 
+  (3, 'The Revenant'),
+  (4, 'Tomb Raider'), 
+  (4, 'Mr. & Mrs. Smith'),
+  (5, 'Fight Club'), 
+  (5, 'Once Upon a Time in Hollywood'),
+  (6, 'Lost in Translation'), 
+  (6, 'The Avengers'),
+  (7, 'Jumanji'), 
+  (7, 'Fast and Furious'),
+  (8, 'La La Land'), 
+  (8, 'Zombieland'),
+  (9, 'Deadpool'), 
+  (9, 'The Proposal'),
+  (10, 'The Hunger Games'), 
+  (10, 'Silver Linings Playbook');
+
+SELECT fa.full_name, m.movie_name
+FROM famous_actors fa
+JOIN movies m ON fa.id = m.person_id;
+
+SELECT famous_actors.full_name AS actor_name, spouses.name AS spouse_name
+FROM famous_actors
+LEFT JOIN spouses
+ON famous_actors.id = spouses.actor_id;
